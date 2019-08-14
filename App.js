@@ -1,19 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import MainMenu from './src/screens/MainMenu';
+import DraftBoard from './src/screens/DraftBoard';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const navigator = createStackNavigator({
+  Main: MainMenu,
+  Draft: DraftBoard
+}, {
+  initialRouteName: 'Main',
+  defaultNavigationOptions: {
+    title: 'FF Draft Aid'
+  }
 });
+
+export default createAppContainer(navigator);
