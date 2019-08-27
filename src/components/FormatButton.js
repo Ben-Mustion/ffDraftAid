@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Button = ({ onPress, title, buttonStyle }) => {
+const FormatButton = ({ onPress, title }) => {
   return (
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={onPress} >
         <View style={styles.scoringSelector}>
           <Text style={styles.text}>{title}</Text>
         </View>
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Button;
+export default FormatButton;
