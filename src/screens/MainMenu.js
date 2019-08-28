@@ -5,7 +5,7 @@ import { Context } from '../context/PlayersContext';
 
 const MainMenu = ({ navigation }) => {
   const { state, getStandardRankings, getHalfPPRRankings, getPPRRankings } = useContext(Context);
- 
+  
   onStandardPress = () => {
     navigation.navigate('Draft', {prevScreenTitle: 'Main Menu'});
     getStandardRankings();

@@ -2,6 +2,7 @@ import createDataContext from './createDataContext';
 import fpRankings from '../api/fpRankings';
 
 const prevState = [];
+const arr = [];
 
 const playersReducer = (state, action) => {
 
@@ -22,11 +23,10 @@ const playersReducer = (state, action) => {
       }
       state = prevState.pop();
       return state;
-    case 'qbs_select':
-      position.qbs = true;
-      position.all = false;
-      console.log(position)
-      return position;
+    case 'clear_prev_state':
+      if (prevState.length) {
+        prevState.length = 0;
+      }
     default:
       return state;
   }
@@ -37,6 +37,7 @@ const getStandardRankings = (dispatch) => {
     const response = await fpRankings.get('/rankings?format=standard');
 
     dispatch({ type: 'get_standard_rankings', payload: response.data.rankings });
+    dispatch({ type: 'clear_prev_state'});
   };
 };
 
@@ -45,6 +46,7 @@ const getHalfPPRRankings = (dispatch) => {
     const response = await fpRankings.get('/rankings?format=half_ppr');
 
     dispatch({ type: 'get_half_ppr_rankings', payload: response.data.rankings });
+    dispatch({ type: 'clear_prev_state'});
   };
 };
 
@@ -53,6 +55,7 @@ const getPPRRankings = (dispatch) => {
     const response = await fpRankings.get('/rankings?format=ppr');
 
     dispatch({ type: 'get_ppr_rankings', payload: response.data.rankings });
+    dispatch({ type: 'clear_prev_state'});
   };
 };
 
@@ -68,19 +71,12 @@ const revertPick = (dispatch) => {
   };
 };
 
-const qbsSelect = (dispatch) => {
-  return () => {
-    dispatch({ type: 'qbs_select'})
-  };
-};
-
 export const { Context, Provider } = createDataContext(
   playersReducer, 
   { getStandardRankings, 
     getHalfPPRRankings, 
     getPPRRankings, 
     draftPlayer, 
-    revertPick,
-    qbsSelect
+    revertPick
   },[]
 );

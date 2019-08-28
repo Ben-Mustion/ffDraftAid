@@ -420,7 +420,7 @@ PlayerList.defaultProps = {
       rbs: false,
       wrs: false,
       tes: false
-    }
+    },
   }
 }
 

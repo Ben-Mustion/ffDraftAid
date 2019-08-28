@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import PlayerList from '../components/PlayerList';
-import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 
 const DraftBoard = () => {
@@ -20,7 +20,10 @@ DraftBoard.navigationOptions = ({ navigation }) => {
         onPress={() => {
           Alert.alert("Are you sure?", "Draft board will be reset", [{
             title: "Go Back to Main Menu",
-            onPress: () => navigation.navigate("Main")
+            onPress: () => {
+              state = [];
+              navigation.navigate("Main")
+            }
           }])
       }}>
         <AntDesign size={30} name="back"/>
