@@ -24,7 +24,7 @@ const PlayerList = ({ initialValues }) => {
           wrs: false,
           tes: false
         })}>
-          <View style={styles.positionButton} >
+          <View style={{...styles.positionButton, backgroundColor: '#05ff1a'}} >
             <Text>All</Text>
           </View>
         </TouchableOpacity>
@@ -80,7 +80,7 @@ const PlayerList = ({ initialValues }) => {
         </View>
         <RankingHeader />
         <View>
-          <FlatList 
+          <FlatList
             data={playerList}
             keyExtractor={(result) => result.name}
             renderItem={({ item }) => {
@@ -114,7 +114,7 @@ const PlayerList = ({ initialValues }) => {
           wrs: false,
           tes: false
         })}>
-          <View style={styles.positionButton} >
+          <View style={{...styles.positionButton, backgroundColor: '#05ff1a'}} >
             <Text>QB</Text>
           </View>
         </TouchableOpacity>
@@ -204,7 +204,7 @@ const PlayerList = ({ initialValues }) => {
           wrs: false,
           tes: false
         })}>
-          <View style={styles.positionButton} >
+          <View style={{...styles.positionButton, backgroundColor: '#05ff1a'}} >
             <Text>RB</Text>
           </View>
         </TouchableOpacity>
@@ -294,7 +294,7 @@ const PlayerList = ({ initialValues }) => {
           wrs: true,
           tes: false
         })}>
-          <View style={styles.positionButton} >
+          <View style={{...styles.positionButton, backgroundColor: '#05ff1a'}} >
             <Text>WR</Text>
           </View>
         </TouchableOpacity>
@@ -385,7 +385,7 @@ const PlayerList = ({ initialValues }) => {
           wrs: false,
           tes: true
         })}>
-          <View style={styles.positionButton} >
+          <View style={{...styles.positionButton, backgroundColor: '#05ff1a'}} >
             <Text>TE</Text>
           </View>
         </TouchableOpacity>

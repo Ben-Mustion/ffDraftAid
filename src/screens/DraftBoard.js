@@ -1,21 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import PlayerList from '../components/PlayerList';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const DraftBoard = () => {
-    if (<PlayerList />) {
-      return (
-      <View>
-        <PlayerList />
-      </View>
-      )
-    } else {
-      return (
-        <Text>Loading</Text>
-      )
-    }
+
+  return (
+    <View style={{ paddingBottom: 300 }}>
+      <PlayerList />
+    </View>
+  )
 };
 
 DraftBoard.navigationOptions = ({ navigation }) => {
@@ -30,7 +25,8 @@ DraftBoard.navigationOptions = ({ navigation }) => {
       }}>
         <AntDesign size={30} name="back"/>
       </TouchableOpacity>
-    )
+    ),
+    title: 'Draft Board'
   }
 }
 

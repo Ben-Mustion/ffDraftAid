@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "FF Draft Aid",
+    "name": "Fantasy Football Draft Aid",
     "slug": "ffDraftAid",
     "privacy": "public",
     "sdkVersion": "34.0.0",
@@ -14,8 +14,7 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "contain"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,7 +23,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ffdraftaid.ffdraftaid"
     }
   }
 }

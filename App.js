@@ -12,7 +12,7 @@ const navigator = createStackNavigator(
   {
     initialRouteName: 'Main',
     defaultNavigationOptions: {
-      title: 'FF Draft Aid'
+      title: 'Fantasy Football Draft Aid'
       }
     }
   );

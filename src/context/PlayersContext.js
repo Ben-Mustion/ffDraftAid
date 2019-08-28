@@ -4,13 +4,7 @@ import fpRankings from '../api/fpRankings';
 const prevState = [];
 
 const playersReducer = (state, action) => {
-  const position = {
-    all: false,
-    qbs: true,
-    rbs: false,
-    wrs: false,
-    tes: false
-  }
+
 
   switch (action.type) {
     case 'get_standard_rankings':
@@ -33,15 +27,6 @@ const playersReducer = (state, action) => {
       position.all = false;
       console.log(position)
       return position;
-    // case 'show_all':
-    //   state = allPlayers.pop();
-    //   allPlayers.push([...state])
-    //   return state;
-    // case 'show_position':
-    //   console.log(state)
-    //   state = allPlayers.pop();
-    //   allPlayers.push([...state]);
-    //   return state.filter((player) => player.position === action.payload );
     default:
       return state;
   }
@@ -88,24 +73,6 @@ const qbsSelect = (dispatch) => {
     dispatch({ type: 'qbs_select'})
   };
 };
-
-// const updateBoard = (dispatch) => {
-//   return () => {
-//     dispatch({ type: 'update_board'})
-//   };
-// };
-
-// const showAll = (dispatch) => {
-//   return async () => {
-//     dispatch({ type: 'show_all' })
-//   }
-// }
-
-// const showPosition = (dispatch) => {
-//   return async (position) => {
-//     dispatch({ type: 'show_position', payload: position})
-//   }
-// }
 
 export const { Context, Provider } = createDataContext(
   playersReducer, 

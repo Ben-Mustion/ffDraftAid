@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Linking } from 'react-native';
 import FormatButton from '../components/FormatButton';
 import { Context } from '../context/PlayersContext';
 
@@ -36,6 +36,16 @@ const MainMenu = ({ navigation }) => {
         title="PPR" 
         onPress={onPPRPress} 
       />
+      <View>
+        <Text style={{ alignSelf: 'center' }}>Click a player to draft them</Text>
+        <Text>  </Text>
+        <Text style={{ alignSelf: 'center' }}>Players grouped into tiers and sorted by rankings</Text>
+        <Text>  </Text>
+        <Text>  </Text>
+        <Text>  </Text>
+        <Text style={{ alignSelf: 'center' }} onPress={ () => Linking.openURL('https://fantasy-football-draft-aid.herokuapp.com')}>Privacy Policy</Text>
+        
+      </View>
     </View>
   )
 };
